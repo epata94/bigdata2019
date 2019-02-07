@@ -37,6 +37,3 @@ while True:
   print(blank,end='')
   print(hyphen*customer_input,end='')
   print(blank)
-
-  # modify1
-# modify2
