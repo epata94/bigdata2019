@@ -1,5 +1,4 @@
 # coding: cp949
-
 output_msg="홀수를 입력하세요(0 <- 종료): "
 blank=" "
 star="*"
@@ -38,3 +37,5 @@ while True:
   print(blank,end='')
   print(hyphen*customer_input,end='')
   print(blank)
+
+  # modify1
