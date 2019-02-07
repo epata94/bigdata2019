@@ -1,0 +1,11 @@
+input_data="201901300915-0175440.002"
+year=input_data[0:4]
+month=input_data[4:6]
+#day=
+#time=
+#minute=
+#temp=
+#dust=
+#u_dust=
+#ozon=
+print("year="+year+"\nmonth="+month)
