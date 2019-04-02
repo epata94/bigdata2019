@@ -1,5 +1,6 @@
 import random
-class_member_list=['현구','상민','치우','현기','규동','민선','세중','영호','정헌']
+# class_member_list=['현구','상민','치우','현기','규동','민선','세중','영호','정헌']
+class_member_list=['상민','치우','규동','민선','세중','정헌']
 group_number=1
 index = 0
 while True:
@@ -12,3 +13,6 @@ while True:
         index+=1
     except:
         break
+
+input("차량 배정 운명의 시간")
+print(random.randint(1,2))
