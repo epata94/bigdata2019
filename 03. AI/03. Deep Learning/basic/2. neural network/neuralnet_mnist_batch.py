@@ -19,8 +19,11 @@ def softmax(a):
     return y
 
 def get_data():
-    # (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
     (x_train, t_train), (x_test, t_test) = mnist.load_data()
+    x_train = x_train.reshape(60000, 784).astype('float32')
+    x_test = x_test.reshape(10000, 784).astype('float')
+    x_train /= 255
+    x_test /= 255
     return x_test, t_test
 
 
@@ -53,7 +56,7 @@ accuracy_cnt = 0
 for i in range(0, len(x), batch_size):
     x_batch = x[i:i+batch_size]
     y_batch = predict(network, x_batch)
-    p = np.argmax(y_batch, axis=1)
+    p = np.argmax(y_batch, axis=1) # 1차원을 축으로 최대 값을 찾는다.
     accuracy_cnt += np.sum(p == t[i:i+batch_size])
 
 print("Accuracy:" + str(float(accuracy_cnt) / len(x)))

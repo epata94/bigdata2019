@@ -3,30 +3,14 @@ import sys, os
 sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
 import numpy as np
 import pickle
-# from dataset.mnist import load_mnist
-# from common.functions import sigmoid, softmax
-from keras.datasets import mnist
-
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
-
-def softmax(a):
-    c = np.max(a)
-    exp_a = np.exp(a-c)
-    sum_exp_a = np.sum(exp_a)
-    y = exp_a / sum_exp_a
-
-    return y
+from dataset.mnist import load_mnist
+from common.functions import sigmoid, softmax
 
 
 def get_data():
-    # (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
-    (x_train, t_train), (x_test, t_test) = mnist.load_data()
-    x_train = x_train.reshape(60000, 784).astype('float32')
-    x_test = x_test.reshape(10000, 784).astype('float')
-    x_train /= 255
-    x_test /= 255
+    (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
     return x_test, t_test
+
 
 def init_network():
     with open("sample_weight.pkl", 'rb') as f:
