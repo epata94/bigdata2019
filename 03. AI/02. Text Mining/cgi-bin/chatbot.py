@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 import cgi
-import sys
-import codecs
 from botengine import make_reply
-
-# 한글 처리 --- (※0)
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 # 입력 양식의 글자 추출하기 --- (※1)
 form = cgi.FieldStorage()
